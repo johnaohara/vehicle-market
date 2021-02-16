@@ -110,8 +110,7 @@ public class VehicleOffer {
     public VehicleGalleryItem mainImage;
 
     // identifiers for image paths
-    @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
-    @JoinColumn(name = "V_OFFER", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
+    @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL, mappedBy = "vehicleOffer")
     @Fetch(FetchMode.SUBSELECT)
     public Collection<VehicleGalleryItem> gallery;
 }
